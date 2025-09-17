@@ -11,20 +11,21 @@ interface HeroSectionProps {
 
 export default function HeroSection({ scrollProgress, onScrollToNext, onNavigateToConservation }: HeroSectionProps) {
   return (
-    <section className="relative min-h-screen flex items-center justify-between px-8 lg:px-16 overflow-hidden">
+    <section className="relative min-h-screen py-20 px-8 lg:px-16 overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 opacity-20">
         <div className="absolute top-20 left-20 w-96 h-96 bg-accent/10 rounded-full blur-3xl feather-float" />
         <div className="absolute bottom-20 right-20 w-96 h-96 bg-primary-glow/10 rounded-full blur-3xl feather-float" style={{ animationDelay: '3s' }} />
       </div>
 
-      {/* Left Content */}
-      <motion.div 
-        className="flex-1 max-w-2xl z-10"
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, delay: 0.2 }}
-      >
+      <div className="max-w-7xl mx-auto relative z-10 min-h-screen flex items-center justify-between">
+        {/* Left Content */}
+        <motion.div 
+          className="flex-1 max-w-2xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.2 }}
+        >
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, y: 20 }}
@@ -105,17 +106,18 @@ export default function HeroSection({ scrollProgress, onScrollToNext, onNavigate
         </motion.div>
       </motion.div>
 
-      {/* Right 3D Model */}
-      <motion.div 
-        className="flex-1 h-screen relative"
-        initial={{ opacity: 0, scale: 0.8 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1.2, delay: 0.4 }}
-      >
-        <div className="absolute inset-0">
-          <HarpyModel scrollProgress={scrollProgress} isVisible={true} />
-        </div>
-      </motion.div>
+        {/* Right 3D Model */}
+        <motion.div 
+          className="flex-1 h-screen relative"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.2, delay: 0.4 }}
+        >
+          <div className="absolute inset-0">
+            <HarpyModel scrollProgress={scrollProgress} isVisible={true} />
+          </div>
+        </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.div 
