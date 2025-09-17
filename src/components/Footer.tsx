@@ -152,9 +152,24 @@ export default function Footer() {
           </div>
           
           <p className="text-xs text-muted-foreground">
-            © 2024 Harpia Educational Project. Conteúdo baseado em pesquisas científicas 
+            © 2025 Harpia Educational Project. Conteúdo baseado em pesquisas científicas 
             para fins educacionais e de conservação.
           </p>
+          
+          <div className="mt-4 text-center">
+            <p className="text-xs text-muted-foreground mb-2">Desenvolvido por:</p>
+            <div className="flex flex-wrap justify-center gap-3 text-xs text-accent">
+              <span>Ikaro Freire</span>
+              <span>•</span>
+              <span>Murilo Fornel</span>
+              <span>•</span>
+              <span>Gabriel Carvalho</span>
+              <span>•</span>
+              <span>João Paulo</span>
+              <span>•</span>
+              <span>Caio Henrique</span>
+            </div>
+          </div>
           
           <div className="flex justify-center items-center mt-4 space-x-4">
             <div className="flex items-center text-xs text-muted-foreground">

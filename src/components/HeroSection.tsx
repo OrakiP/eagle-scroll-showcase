@@ -6,9 +6,10 @@ import HarpyModel from './HarpyModel';
 interface HeroSectionProps {
   scrollProgress: number;
   onScrollToNext: () => void;
+  onNavigateToConservation?: () => void;
 }
 
-export default function HeroSection({ scrollProgress, onScrollToNext }: HeroSectionProps) {
+export default function HeroSection({ scrollProgress, onScrollToNext, onNavigateToConservation }: HeroSectionProps) {
   return (
     <section className="relative min-h-screen flex items-center justify-between px-8 lg:px-16 overflow-hidden">
       {/* Background Effects */}
@@ -77,6 +78,7 @@ export default function HeroSection({ scrollProgress, onScrollToNext }: HeroSect
             variant="outline" 
             size="lg" 
             className="px-8 py-4 text-lg font-semibold border-accent text-accent hover:bg-accent hover:text-accent-foreground"
+            onClick={onNavigateToConservation}
           >
             Estado de Conservação
           </Button>

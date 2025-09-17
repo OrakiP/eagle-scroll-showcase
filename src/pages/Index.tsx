@@ -49,6 +49,13 @@ const Index = () => {
     }
   };
 
+  const handleNavigateToConservation = () => {
+    const habitatSection = document.getElementById('habitat');
+    if (habitatSection) {
+      habitatSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <div className="min-h-screen">
       <Navigation activeSection={activeSection} onNavigate={handleNavigate} />
@@ -58,6 +65,7 @@ const Index = () => {
           <HeroSection 
             scrollProgress={scrollProgress} 
             onScrollToNext={handleScrollToNext}
+            onNavigateToConservation={handleNavigateToConservation}
           />
         </div>
         
